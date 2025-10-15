@@ -1,6 +1,7 @@
 create database Intern;
 use Intern;
 
+
 drop database Intern;
 
 create table Department(Dept_id int auto_increment primary key,Dept_name varchar(20));
@@ -39,8 +40,8 @@ foreign key (Role_id) references Roles(Role_id)
 );
 
 insert into Users (First_name,Last_name,Email,Phone,Join_date,Dept_id,Role_id)
-values ("Ashish","Chalke","Ashishchalke23@gmail.com",9263789612,'2025-4-25',1,2),
-       ("Ashish",'Kumar','Kumarashish@gmail.com',9629638945,'2025-1-2',2,1),
+values ("Saniya","More","saniyamore@gmail.com",8574965652,'2025-4-25',1,2),
+       ("Kim",'Rudra','kimrudra@gmail.com',8546971253,'2025-1-2',2,1),
        ("Asif",'Khan','Khan@gmail.com',88794561231,current_date(),3,4);
        
 insert into Users (User_id,First_name,Last_name,Email,Phone,Join_date,Dept_id,Role_id)
