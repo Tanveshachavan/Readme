@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'updatedept' range.dept_id%}" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_dept_name">Dept name:</label>
+        </p>
+
+        <p>
+            <input type="text" name="dept_name" maxlength="100" required="" id="id_dept_name" value="{{range.dept_name}}">
+        </p>
+
+        <p>
+            <label for="id_descriptions">Descriptions:</label>
+        </p>
+
+        <p>
+            <input type="text" name="descriptions" maxlength="300" required="" id="id_descriptions" value="{{range.descriptions}}">
+        </p>
+
+        <p>
+            <label for="id_status">Status:</label>
+        </p>
+
+        <p>
+            <input type="text" name="status" maxlength="50" required="" id="id_status" value="{{range.status}}">
+        </p>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

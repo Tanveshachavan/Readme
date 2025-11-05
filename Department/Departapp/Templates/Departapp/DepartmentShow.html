@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Sr.No</td>
+            <td>Department Name</td>
+            <td>Description</td>
+            <td>Action</td>
+        </tr>
+
+        {% for i in range %}
+
+        <tr>
+            <td>{{i.dept_id}}</td>
+            <td>{{i.dept_name}}</td>
+            <td>{{i.descriptions}}</td>
+            <td>{{i.created_at}}</td>
+            <td>{{i.updated_at}}</td>
+            <td>{{i.status}}</td>
+            <td>
+                <a href="{% url 'editdept' i.dept_id %}">Edit</a>
+                <a href="{% url 'deletdept' i.dept_id %}">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>
