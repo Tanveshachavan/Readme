@@ -4,6 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #d9afd9, #97d9e1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px 15px;
+        }
+
+        tr:first-child {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #eef5ff;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        a[href*="edit"] {
+            background-color: #28a745;
+        }
+
+        a[href*="edit"]:hover {
+            background-color: #218838;
+        }
+
+        a[href*="delet"] {
+            background-color: #dc3545;
+        }
+
+        a[href*="delet"]:hover {
+            background-color: #c82333;
+        }
+
+        td:last-child {
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -11,11 +83,13 @@
             <td>Sr.No</td>
             <td>Department Name</td>
             <td>Description</td>
+            <td>Created At</td>
+            <td>Updated At</td>
+            <td>Status</td>
             <td>Action</td>
         </tr>
 
         {% for i in range %}
-
         <tr>
             <td>{{i.dept_id}}</td>
             <td>{{i.dept_name}}</td>
@@ -28,7 +102,6 @@
                 <a href="{% url 'deletdept' i.dept_id %}">Delete</a>
             </td>
         </tr>
-
         {% endfor %}
     </table>
 </body>

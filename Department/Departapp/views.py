@@ -9,7 +9,7 @@ def Dept(request):
         
         if data.is_valid():
             data.save()
-            return redirect('showdepartment')
+            return redirect('showdept')
         
     else:
         data = Departmentform()
